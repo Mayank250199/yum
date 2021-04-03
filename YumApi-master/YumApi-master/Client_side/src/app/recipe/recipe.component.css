@@ -1,0 +1,270 @@
+/* :: 15.0 Receipe Area */
+
+.container{
+	margin:30px;
+	position: absolute;
+	z-index:-1;
+}
+.img{
+	width: 100%;
+	height:100%;
+	/* height: 300px; */
+    vertical-align: middle;
+}
+
+.receipe-slider{
+	width: 100%;
+	height: 400px;
+	margin-left:20%;
+	margin-right: 30%;
+}
+.receipe-post-search form input {
+	width: 100%;
+	height: 60px;
+	background-color: #f3f5f8;
+	font-size: 14px;
+	padding: 0 20px;
+	border: none;
+}
+
+h4{
+    color: #000000;
+  line-height: 1.3;
+  font-weight: 600;
+}
+ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.receipe-post-search .col-12 {
+		margin-bottom: 30px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.receipe-post-search .col-12 {
+		margin-bottom: 15px;
+	}
+}
+
+.receipe-headline span {
+	font-size: 14px;
+	display: block;
+	color: #a4a4a4;
+	margin-bottom: 0;
+}
+
+.receipe-headline h2 {
+	font-size: 36px;
+	color: #474747;
+	margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+	.receipe-headline h2 {
+		font-size: 24px;
+	}
+}
+
+.receipe-headline .receipe-duration {
+	border-left: 3px solid #c24049;
+	padding: 15px;
+}
+
+.receipe-headline .receipe-duration h6 {
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.receipe-headline .receipe-duration h6:last-child {
+	margin-bottom: 0;
+}
+
+.receipe-ratings .ratings {
+	margin-bottom: 30px;
+}
+
+.receipe-ratings i {
+	font-size: 18px;
+	color: #fbb710;
+	padding: 0 3px;
+}
+
+.single-preparation-step {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 50px;
+}
+
+.single-preparation-step h4 {
+	color: #474747;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 60px;
+	flex: 0 0 60px;
+	max-width: 60px;
+	width: 60px;
+	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.ingredients {
+		margin-bottom: 80px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.ingredients {
+		margin-bottom: 80px;
+	}
+}
+
+.ingredients h4 {
+	color: #474747;
+	margin-bottom: 30px;
+}
+
+.ingredients .custom-checkbox .custom-control-label::before {
+	border-radius: 0;
+}
+
+.ingredients .custom-control-label::before {
+	width: 30px;
+	height: 30px;
+	background-color: #f3f5f8;
+}
+
+.ingredients .custom-control {
+	padding-left: 2.5rem;
+	margin-bottom: 30px;
+	min-height: 35px;
+}
+
+.ingredients .custom-control-label {
+	margin-bottom: 0;
+	padding-top: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #2f2f2f;
+}
+
+.ingredients .custom-control-label::after {
+	top: 10px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+}
+
+.ingredients .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+	background-color: #c24049;
+}
+.ingredient{
+	margin:10px;
+}
+.btn{
+	color: white;
+    padding: 4px;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+    display: block;
+    width: 30%;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top:10%;
+	margin-bottom: 3%;
+	margin-right:60%;
+    border: 1px solid rgba(255, 255, 255, .1);
+    background: #c24049;
+}
+
+
+/* Button */
+
+.delicious-btn {
+	display: inline-block;
+	min-width: 160px;
+	height: 60px;
+	color: #ffffff;
+	border: none;
+	border-left: 3px solid #c24049;
+	border-radius: 0;
+	padding: 0 30px;
+	font-size: 16px;
+	line-height: 58px;
+	font-weight: 600;
+	-webkit-transition-duration: 500ms;
+	transition-duration: 500ms;
+	text-transform: capitalize;
+	background-color: #c24049;
+}
+
+.delicious-btn.active,
+.delicious-btn:hover,
+.delicious-btn:focus {
+	font-size: 16px;
+	font-weight: 600;
+	color: #ffffff;
+	background-color: #c24049;
+	border-color: #c24049;
+}
+
+.delicious-btn.btn-2 {
+	background-color: #c24049;
+	border-color: #c24049;
+}
+
+.delicious-btn.btn-2.active,
+.delicious-btn.btn-2:hover,
+.delicious-btn.btn-2:focus {
+	background-color: #c24049;
+	border-color: #c24049;
+}
+
+.delicious-btn.btn-3 {
+	background-color: #474747;
+	border-color: #c24049;
+}
+
+.delicious-btn.btn-3.active,
+.delicious-btn.btn-3:hover,
+.delicious-btn.btn-3:focus {
+	background-color: #c24049;
+	border-color: #c24049;
+}
+
+.delicious-btn.btn-4 {
+	background-color: transparent;
+	border: 3px solid #c24049;
+	line-height: 53px;
+	color: #c24049;
+}
+
+@media only screen and (max-width: 767px) {
+	.delicious-btn.btn-4 {
+		height: 40px;
+		line-height: 33px;
+	}
+}
+
+.delicious-btn.btn-4.active,
+.delicious-btn.btn-4:hover,
+.delicious-btn.btn-4:focus {
+	line-height: 53px;
+	color: #ffffff;
+	background-color: #c24049;
+}
+
+@media only screen and (max-width: 767px) {
+	.delicious-btn.btn-4.active,
+	.delicious-btn.btn-4:hover,
+	.delicious-btn.btn-4:focus {
+		height: 40px;
+		line-height: 33px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.delicious-btn {
+		height: 40px;
+		line-height: 39px;
+	}
+}

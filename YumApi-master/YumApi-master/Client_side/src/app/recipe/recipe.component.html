@@ -1,0 +1,72 @@
+
+        
+        <!-- Receipe Content Area -->
+        <div class="receipe-content-area">
+                <div class="container">
+                    <div class="row row1">
+                            <div class="receipe-slider">
+                                    <div class="receipe-slider owl-carousel">
+                                        <img class="img"src="{{Recipe.imageUrl}}" alt="">
+                                        <!-- <img src="../../assets/img/bg-img/bg5.jpg" alt="">
+                                        <img src="../../assets/img/bg-img/bg5.jpg" alt=""> -->
+                                    </div>
+                                </div>
+                        <div class="col-12 col-md-8">
+                            <div class="receipe-headline my-5">
+                                <!-- <span>April 05, 2018</span> -->
+                                <h2>{{Recipe.title}}</h2>
+                                <div class="receipe-duration">
+                                    <h6>COOKING TIME: {{Recipe.timeToCook}} mins</h6>
+                                    <!-- <h6>Cook: 30 mins</h6> -->
+                                    <!-- <h6>CALORIES: 8 Servings</h6> -->
+                                </div>
+                                <br>
+                                <div> <h3><b>Description</b></h3><em>&nbsp;{{Recipe.description}}</em></div>
+                                <br>
+                            </div>
+                        </div>
+    
+                        <!-- <div class="col-12 col-md-4">
+                            <div class="receipe-ratings text-right my-5">
+                                <div class="ratings">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div>
+                                <a href="#" class="btn delicious-btn">For Begginers</a>
+                            </div>
+                        </div> -->
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <!-- Single Preparation Step -->
+                            <h4>Directions</h4>
+                            <br>
+                            <div class="single-preparation-step d-flex" *ngFor="let direction of Recipe?.directions; let i = index">
+                                <h4>{{i+1}}</h4>
+                                <p>{{direction.direction}}</p>
+                            </div>
+                            <!-- Single Preparation Step -->
+                        </div>
+    
+                        <!-- Ingredients -->
+                        <div class="col-12 col-lg-4">
+                            <div class="ingredients">
+                                <h4>Ingredients</h4>
+    
+                                <!-- Custom Checkbox -->
+                                <div  class="ingredient"*ngFor="let Ingredient of Recipe?.ingredient; let i = index">
+                                 <input type="checkbox" (click)="addToCart($event,Ingredient)">&nbsp;&nbsp;
+                                <label >{{Ingredient?.ingredientName}}</label>
+                                </div>
+    
+                                <a class="btn" [routerLink] = "'/cart'" >🛒 {{CartCount}} Cart Items</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                  
+    

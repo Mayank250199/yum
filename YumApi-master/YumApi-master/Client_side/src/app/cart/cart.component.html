@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron-fluid">
+</div>
+
+<main>
+    <section class="cart">
+        <ul>
+          <li class="item" *ngFor="let cart of  cartIngredient">
+              <i class="fa fa-trash del"  (click)=delItem(cart)></i>
+            <h3 class="name">{{cart.ingredientName}}</h3>
+            <p class="price">Rs. {{cart.price}}</p>
+            
+          </li>
+        </ul>
+      </section>
+    <section class="promo">
+        <div> Your Order </div>
+      </section>
+<section class="summary">
+        <div class="items">🛒 {{CartCount}} items</div>
+        <div class="total">Rs {{Totalprice}}</div>
+      </section>
+      
+        <section class="actions" (click)="PostOrders()">Checkout</section>
+
+      
+   
+      
+   
+      
+      <!-- <section class="help">
+         Need Help
+      </section> -->
+    </main>

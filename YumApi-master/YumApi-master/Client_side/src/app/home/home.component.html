@@ -1,0 +1,97 @@
+
+
+
+    <div class="jumbotron">
+          <!-- /.container -->
+          <div class="container text-white">
+
+                <div class="logod">
+                        <img id="logo" src="../../assets/img/logo.png">
+                    </div>
+
+                <input class="btn btn-lg" [(ngModel)]="searchVal" placeholder="Search">
+                <!-- <a><img id="logo" src="assets/img/core-img/logo.png" alt=""></a> -->
+              
+              </div>
+              <!-- <div class="container">
+                    <div class="row">
+                        <div id="owl-example" class="owl-carousel">
+                  <div><img src="//placehold.it/300x300/936/c69/?text=1" alt=""></div>
+                  <div><img src="//placehold.it/300x300/693/9c6/?text=2" alt=""></div>
+                  <div><img src="//placehold.it/300x300/369/69c/?text=3" alt=""></div>
+                  <div><img src="//placehold.it/300x300/c33/f66/?text=4" alt=""></div>
+                  <div><img src="//placehold.it/300x300/099/3cc/?text=5" alt=""></div>
+                  <div><img src="//placehold.it/300x300/f93/fc6/?text=6" alt=""></div>
+                </div>
+                    </div> 
+                </div> -->
+        </div>
+        <!-- /.jumbotron -->
+        <div class="main">
+                <h1 >Just for You</h1>
+                <ul class="cards">
+                   <li class="cards_item" *ngFor="let recipe of allRecipe?.result | search : searchVal">
+                      <div class="card">
+                         <div class="card_image"><img class="img" [src]="recipe.imageUrl"></div>
+                         <div class="card_content">
+                            <h2 class="card_title">{{recipe.title}}</h2>
+                            <p class="card_text">{{recipe.description}} </p>
+                            <a class="btn1 card_btn" style="color:white;" (click)="getRecipeInfo(recipe)">View</a>
+                            
+                         </div>
+                      </div>
+                   </li>
+                   <!-- <li class="cards_item">
+                      <div class="card">
+                         <div class="card_image"><img src="../../assets/img/bg-img/bg4.jpg"></div>
+                         <div class="card_content">
+                            <h2 class="card_title">Card Grid Layout</h2>
+                            <p class="card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <button class="btn card_btn">Read More</button>
+                         </div>
+                      </div>
+                   </li>
+                   <li class="cards_item">
+                      <div class="card">
+                         <div class="card_image"><img src="../../assets/img/bg-img/bg1.jpg"></div>
+                         <div class="card_content">
+                            <h2 class="card_title">Card Grid Layout</h2>
+                            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                            <button class="btn card_btn">Read More</button>
+                         </div>
+                      </div>
+                   </li>
+                   <li class="cards_item">
+                      <div class="card">
+                         <div class="card_image"><img src="../../assets/img/bg-img/bg4.jpg"></div>
+                         <div class="card_content">
+                            <h2 class="card_title">Card Grid Layout</h2>
+                            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                            <button class="btn card_btn">Read More</button>
+                         </div>
+                      </div>
+                   </li>
+                   <li class="cards_item">
+                      <div class="card">
+                         <div class="card_image"><img src="../../assets/img/bg-img/bg1.jpg"></div>
+                         <div class="card_content">
+                            <h2 class="card_title">Card Grid Layout</h2>
+                            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                            <button class="btn card_btn">Read More</button>
+                         </div>
+                      </div>
+                   </li>
+                   <li class="cards_item">
+                      <div class="card">
+                         <div class="card_image"><img src="../../assets/img/bg-img/bg4.jpg"></div>
+                         <div class="card_content">
+                            <h2 class="card_title">Card Grid Layout</h2>
+                            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                            <button class="btn card_btn">Read More</button>
+                         </div>
+                      </div>
+                   </li> -->
+                </ul>
+             </div>
+
+             <!-- <app-footer></app-footer> -->

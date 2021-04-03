@@ -1,0 +1,151 @@
+
+        <!-- Sidebar -->
+        <div class="s-layout__sidebar">
+          <a class="s-sidebar__trigger" >
+             <i class="fa fa-bars"></i>
+          </a>
+        
+          <nav class="s-sidebar__nav">
+             <ul class="ul1">
+                <li>
+                   <a class="s-sidebar__nav-link" [routerLink] = "'/home'">
+                      <i class="fa fa-home"></i><em>Home</em>
+                   </a>
+                </li>
+                <!-- <li *ngIf="loggedIn">
+                   <a class="s-sidebar__nav-link" [routerLink] = "'/recipe'">
+                     <i class="fa fa-user"></i><em>My Profile</em>
+                   </a>
+                </li> -->
+                  <!-- <li *ngIf="loggedIn">
+                   <a class="s-sidebar__nav-link" [routerLink] = "'/recipe'">
+                     <i class="fa fa-user"></i><em>My Profile</em>
+                   </a>
+                </li> -->
+                <li *ngIf="loggedIn">
+                   <a class="s-sidebar__nav-link" [routerLink] = "'/cart'" >
+                      <i class="fa fa-shopping-cart"></i><em>Cart</em>
+                   </a>
+                </li>
+                <li class="toggle"  *ngIf="!loggedIn">
+                    <a class="s-sidebar__nav-link cd-signin">
+                        <i class="fa fa-sign-in"></i><em>Sign in</em>
+                    </a>
+                </li>
+                <li class="toggle" *ngIf="!loggedIn">
+                    <a class="s-sidebar__nav-link cd-signup">
+                            <i class="fa fa-user-plus"></i><em>Sign up</em>
+                    </a>
+                </li>
+                <li  *ngIf="loggedIn">
+                        <a (click)="logout()"class="s-sidebar__nav-link cd-signup">
+                                <i class="fa fa-sign-out"></i><em>Logout</em>
+                        </a>
+                    </li>
+        
+
+
+
+        <!-- Login/Signup Modal -->
+
+        <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+            <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+                <ul class="cd-switcher">
+                    <li><a (click)="flogin()"  [ngClass]="{'selected': login }">  Sign in </a></li>
+                    <li><a (click)="fsignup()" [ngClass]="{'selected': signup }"> New account </a></li>
+                </ul>
+    
+                <div id="cd-login" [ngClass]="{'is-selected': login }" > <!-- log in form -->
+                    <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="cd-form">
+                        <p class="fieldset">
+                            <label class="image-replace cd-email" for="signin-email">Username</label>
+                            <input formControlName="Username" name="Username" class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                            <span  class="cd-error-message" *ngIf="!loginForm.get('Username').valid && loginForm.get('Username').touched">
+                                    Username required</span>
+                        </p>
+    
+                        <p class="fieldset">
+                            <label class="image-replace cd-password" for="signin-password">Password</label>
+                            <input formControlName="Password" name="Password" class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+                            <a  class="hide-password">Hide</a>
+                            <span  class="cd-error-message" *ngIf="!loginForm.get('Password').valid && loginForm.get('Password').touched">
+                                    Password required</span>
+                        </p>
+    
+                        <!-- <p class="fieldset">
+                            <input type="checkbox" id="remember-me" checked>
+                            <label for="remember-me">Remember me</label>
+                        </p> -->
+    
+                        <p class="fieldset">
+                            <!-- <input class="full-width" type="submit" value="Login"> -->
+                            <button type="submit" [disabled]="loginForm.invalid" (click)="add()"class="full-width has-padding" style="width:100%"><i *ngIf="loader" class="fa fa-spinner fa-spin"></i>submit</button>
+                        </p>
+                    </form>
+                    
+                    <p class="cd-form-bottom-message"><a >Forgot your password?</a></p>
+                    <!-- <a  class="cd-close-form">Close</a> -->
+                </div> <!-- cd-login -->
+    
+                <div id="cd-signup" [ngClass]="{'is-selected': signup }"> <!-- sign up form -->
+                    <form [formGroup]="signUpForm" (ngSubmit)="registerUser()" class="cd-form" >
+                        <p class="fieldset">
+                            <label class="image-replace cd-username" for="signup-username">Username</label>
+                            <input formControlName="username" name="username"class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                            <!-- <span class="cd-error-message">Error message here!</span> -->
+                            <span  class="cd-error-message" *ngIf="!signUpForm.get('username').valid && signUpForm.get('username').touched">
+                                    Username required</span>
+                        </p>
+    
+                        <p class="fieldset">
+                            <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                            <input formControlName="email" name="email" class="full-width has-padding has-border" id="signup-email" type="text" placeholder="E-mail">
+                            <!-- <span class="cd-error-message">Error message here!</span> -->
+                            <span class="cd-error-message" *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched">
+                                    Email required</span>
+                        </p>
+    
+                        <p class="fieldset">
+                            <label class="image-replace cd-password" for="signup-password">Password</label>
+                            <input formControlName="password" name="password" class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+                            <a  class="hide-password">Hide</a>
+                            <!-- <span class="cd-error-message">Error message here!</span> -->
+                            <span class="cd-error-message" *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched">
+                                    password required</span>
+                        </p>
+<!--     
+                        <p class="fieldset">
+                            <input type="checkbox" id="accept-terms">
+                            <label for="accept-terms">I agree to the <a >Terms</a></label>
+                        </p>
+     -->
+                        <p class="fieldset">
+                            <!-- <input  type="submit" value="Create account"> -->
+                         
+                        </p>
+                        <button class="full-width has-padding" [disabled]="signUpForm.invalid" style="width:100%"type="submit"><i *ngIf="loader" class="fa fa-spinner fa-spin"></i>submit</button>
+                    </form>
+    
+                    <!-- <a class="cd-close-form">Close</a> -->
+                </div> <!-- cd-signup -->
+    
+                <div id="cd-reset-password"> <!-- reset password form -->
+                    <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+    
+                    <form class="cd-form">
+                        <p class="fieldset">
+                            <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                            <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                            <span class="cd-error-message">Error message here!</span>
+                        </p>
+    
+                        <p class="fieldset">
+                            <input class="full-width has-padding" type="submit" value="Reset password">
+                        </p>
+                    </form>
+    
+                    <p class="cd-form-bottom-message"><a>Back to log-in</a></p>
+                </div> <!-- cd-reset-password -->
+                <a  class="cd-close-form">Close</a>
+            </div> <!-- cd-user-modal-container -->
+        </div> <!-- cd-user-modal -->
